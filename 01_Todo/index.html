@@ -2,29 +2,24 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Todo List App</title>
+    <title>TODO App</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="container">
-      <div class="todo__heading">
-        <h1>Todo</h1>
+    <div class="container">
+      <h1>TASKON</h1>
+      <div class="input-group">
+        <input type="text" id="taskInput" placeholder="Enter a task" />
+        <button id="addBtn">Add</button>
       </div>
-      <div class="todo__form">
-        <form>
-          <input
-            type="text"
-            id=""
-            class="todo__input"
-            placeholder="Enter your task"
-          />
-          <button class="submit__button">Add</button>
-        </form>
-      </div>
-      <div class="todo__items"></div>
+      <ul id="taskList"></ul>
     </div>
-    <script type="module" src="/main.js"></script>
+
+    <script src="main.js"></script>
   </body>
 </html>
