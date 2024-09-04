@@ -18,12 +18,15 @@ const tabsData = [
 
 document.addEventListener("DOMContentLoaded", function () {
   /**
-   * 1) Initialise all the div
-   * 2) Set the active tab
-   * 3) Iterate over the tab configuration and render the tabs
+   * 1) Initialize the Active Tab:
+   * 2) Render Tabs and Content:
+   * 3) Set Up Event Delegation for Tabs
+   * 4) Open the Active Tab
+   * 5) Initial Rendering and Opening of the Default Tab
    */
   let activeTab = tabsData[0].id;
 
+  /** render all the tabs and contents */
   function renderTabs() {
     const tabContainer = document.querySelector("#tabContainer");
     const tabContentContainer = document.querySelector("#tabContentContainer");
@@ -36,22 +39,43 @@ document.addEventListener("DOMContentLoaded", function () {
       tabContainer.append(tabButton);
 
       const tabContent = document.createElement("div");
-      tabContent.id = tab.id;
+      tabContent.id = `tab-${tab.id}`;
       tabContent.className = "tabContent";
       tabContent.innerHTML = `<h3>${tab.title}</h3><p>${tab.content}</p>`;
       tabContentContainer.append(tabContent);
     });
+  }
 
-    tabContainer.addEventListener("click", function (event) {
-      if (event.target.matches(".tabLinks")) {
-        console.log(event.target.id);
-        const tabId = event.target.id;
-        if (tabId !== activeTab) {
-          openTab(tabId);
-          activeTab = tabId;
-        }
+  /** using event delegation */
+  tabContainer.addEventListener("click", function (event) {
+    if (event.target.matches(".tabLinks")) {
+      const tabId = event.target.id;
+      if (tabId !== activeTab) {
+        openTab(tabId);
+        activeTab = tabId;
       }
+    }
+  });
+
+  /** Opening individual tab on click */
+  function openTab(tabId) {
+    const allTabsContent = document.querySelectorAll(".tabContent");
+    const allTabButtons = document.querySelectorAll(".tabLinks");
+
+    allTabsContent.forEach((tabContent) => {
+      tabContent.style.display = "none";
     });
+
+    /** remove active state from all button */
+    allTabButtons.forEach((tabButton) => {
+      tabButton.classList.remove("active");
+    });
+
+    document.getElementById(`tab-${tabId}`).style.display = "block";
+
+    /** Give active state to active tab button */
+    document.getElementById(tabId).classList.add("active");
   }
   renderTabs();
+  openTab(activeTab);
 });

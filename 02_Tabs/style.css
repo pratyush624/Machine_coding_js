@@ -12,3 +12,46 @@
   border: none;
   box-sizing: border-box;
 }
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-inline: 4rem;
+  /* width: 40%; */
+}
+
+.tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.tabLinks {
+  background: #2c313d;
+  color: #ffffff;
+  padding: 0.5rem 2rem;
+  border-radius: 0.1rem;
+  font-weight: bold;
+  letter-spacing: 3px;
+  font-size: medium;
+  cursor: pointer;
+}
+
+.tabLinks:hover {
+  background: #81e6d9;
+  color: #1a202c;
+}
+
+.active {
+  background: #81e6d9;
+  color: #1a202c;
+  font-weight: bold;
+  letter-spacing: 3px;
+  font-size: medium;
+}
+
+#tabContentContainer {
+  margin-top: 4rem;
+}
