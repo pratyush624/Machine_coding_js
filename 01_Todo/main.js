@@ -93,3 +93,30 @@ document.addEventListener("DOMContentLoaded", () => {
     taskList.appendChild(li);
   }
 });
+
+function bubbleSort(arr) {
+  /**
+   * This functionapplied adjacent comparisons
+   * and immediate swaps with adjacent element
+   */
+  const n = arr.length;
+  for (let i = 0; i < n - 1; i++) {
+    let isSwapped = false;
+    for (let j = 0; j < n - i - 1; j++) {
+      if (arr[j] > arr[j + 1]) {
+        // swap ith element with j
+        let temp = arr[j + 1];
+        arr[j + 1] = arr[j];
+        arr[j] = temp;
+        isSwapped = true;
+      }
+    }
+    if (isSwapped == false) {
+      break;
+    }
+  }
+}
+
+let arr = [5, 4, 3, 2, 1];
+bubbleSort(arr);
+console.log(arr);
