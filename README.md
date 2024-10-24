@@ -1,3 +1,3 @@
 ```
-This are the Machine Coding Questions
+These are the Machine Coding Questions
 ```
