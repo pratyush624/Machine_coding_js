@@ -1,6 +1,6 @@
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  background-color: #09090b;
+  background-color: #0d1a26;
   color: #ffffff;
 }
 
@@ -39,14 +39,15 @@ input {
   margin-right: 1rem;
   padding-block: 0.5rem;
   padding-inline: 1rem;
-  background-color: #1a202c;
+  background-color: #13171c;
   color: #ffffff;
   border-radius: 2px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border: 2px solid black;
 }
 
 input:focus {
-  background-color: #1a202c;
+  background-color: #13171c;
   border: 2px solid dodgerblue;
 }
 
@@ -72,12 +73,12 @@ button {
 }
 
 .bottom * {
-  border: 1px solid white;
+  border: 2px solid black;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 1rem;
-  background-color: #1a202c;
+  background-color: #13171c;
   border-radius: 2px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
