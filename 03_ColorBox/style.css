@@ -1,0 +1,79 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background-color: #09090b;
+  color: #ffffff;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  outline: none;
+  border: none;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+}
+.container {
+  max-width: 40%;
+  margin: 0 auto;
+}
+
+#app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+.top {
+  width: 100%;
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+input {
+  width: 100%;
+  margin-right: 1rem;
+  padding-block: 0.5rem;
+  padding-inline: 1rem;
+  background-color: #1a202c;
+  color: #ffffff;
+  border-radius: 2px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+input:focus {
+  background-color: #1a202c;
+  border: 2px solid dodgerblue;
+}
+
+button {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2px;
+  background: dodgerblue;
+  color: #ffffff;
+  font-weight: bolder;
+  letter-spacing: 2px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  cursor: pointer;
+}
+
+.bottom {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.bottom * {
+  border: 1px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
